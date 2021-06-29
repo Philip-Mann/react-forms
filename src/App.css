@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  margin: 0 50px;
+}
+
+form {
+  /* border: 1px solid red; */
+  width: 320px;
+  margin: 0 50px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
