@@ -1,0 +1,49 @@
+[
+    {
+        "id": "firstName",
+        "name": "First Name",
+        "type": "text"
+    },
+    {
+        "id": "lastName",
+        "name": "Last Name",
+        "type": "text"
+    },
+    {
+        "id": "street1",
+        "name": "Street 1",
+        "type": "text"
+    },
+    {
+        "id": "street2",
+        "name": "Street 2",
+        "type": "text"
+    },
+    {
+        "id": "city",
+        "name": "City",
+        "type": "text"
+    },
+    {
+        "id": "state",
+        "name": "State",
+        "type": "text"
+    },
+    {
+        "id": "zipCode",
+        "name": "Zip Code",
+        "type": "text"
+    },
+    {
+        "id": "telephone",
+        "name": "Telephone",
+        "type": "text"
+    },
+    {
+        "id": "email",
+        "name": "Email",
+        "type": "text"
+    }
+
+]
+    
