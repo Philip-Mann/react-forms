@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
 // { useState } is a hook, a function
+import ContactList from './contactList';
 import fields from '../mocks/fields.json';
 
 
 export default function Form() {
 
     const [contact, setContact] = useState({});
-    const [submittedContact, setSubmittedContact] = useState('');
+    const [submittedContacts, setSubmittedContacts] = useState([]);
 
     const handleChange = e => {
         const {id, value} = e.target
-        const updatedContact = Object.assign({}, contact, {
-            ...contact,     // ... splits things up into key: value pairs, spread syntax
+        const updatedContact = Object.assign({}, contact, {     // creates a new object for its value
+            ...contact,     // ... splits things up into key: value pairs; spread syntax
             [id]: value     // adds to the contact object
         });
         setContact(updatedContact);
     };
     const handleSubmit = e => {
         e.preventDefault();
-        const updatedSubmissions = submittedContact.concat([contact.firstName])
-        setSubmittedContact(updatedSubmissions);
+        const updatedSubmissions = submittedContacts.concat([contact]);
+        setSubmittedContacts(updatedSubmissions);
         setContact({});
     }
 
     const fieldItems = fields.map(field => {        //iterating over fields to pull data from it
         const {id, name, type} = field;
         return (
-            <li>
+            <li key={id}>
                 <label htmlFor="{id}">{name}</label>
                 <input 
                     id={id} 
@@ -48,7 +49,7 @@ export default function Form() {
             </form>
             <hr />
             <h2>Submitted Contacts</h2>
-            <p>{submittedContact}</p>
+            <ContactList contacts={submittedContacts} />
         </>
     );
 }
